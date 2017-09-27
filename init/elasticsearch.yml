@@ -1,0 +1,20 @@
+#
+#
+# set config path
+path.conf: /usr/share/elasticsearch/config/
+# set data path
+path.data: /usr/share/elasticsearch/data/
+# set log path
+path.logs: /usr/share/elasticsearch/data/logs
+# disable xpack security
+xpack.security.enabled: false
+xpack.monitoring.enabled: false
+
+cluster.name: "frc971-cluster"
+network.host: 0.0.0.0
+http.port: 9200-9300
+node.name: "Elastic_971"
+# minimum_master_nodes need to be explicitly set when bound on a public IP
+# set to 1 to allow single node clusters
+# Details: https://github.com/elastic/elasticsearch/pull/17288
+# discovery.zen.minimum_master_nodes: 1

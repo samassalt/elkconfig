@@ -1,0 +1,24 @@
+#
+# location: /usr/share/logstash/config/logstash.yml
+# directory to be created and chown to logstash
+#
+# ------------ Data path ------------------
+# Which directory should be used by logstash and its plugins
+# for any persistent needs. Defaults to LOGSTASH_HOME/data
+# path.data: /var/lib/logstash
+# ------------ Pipeline Configuration Settings --------------
+# Where to fetch the pipeline configuration for the main pipeline
+# path.config: /etc/logstash/conf.d
+path.config: /usr/share/logstash/pipeline/
+config.reload.automatic: true
+# ------------ Metrics Settings --------------
+# Bind address for the metrics REST endpoint
+http.host: 0.0.0.0
+# Bind port for the metrics REST endpoint, this option also accept a range
+# (9600-9700) and logstash will pick up the first available ports.
+# http.port: 9600-9700
+# ------------ Debugging Settings --------------
+log.level: info
+path.logs: /usr/share/logstash/data/logs/
+xpack.monitoring.enabled: false
+xpack.monitoring.elasticsearch.url: http://elasticsearch:9200
