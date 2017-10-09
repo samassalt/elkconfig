@@ -6,7 +6,6 @@ services:
     container_name: elasticsearch
     volumes:
       - ./init/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./init/log4j2.properties:/usr/share/logstash/config/log4j2.properties
       - ./data/:/usr/share/elasticsearch/data/
     ports:
       - 9200:9200
