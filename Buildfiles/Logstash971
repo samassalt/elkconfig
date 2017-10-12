@@ -11,5 +11,4 @@ curl https://raw.githubusercontent.com/samassalt/elkconfig/master/configs/logsta
 
 EXPOSE 5000:5000
 
-VOLUME /usr/share/logstash/logfiles/
-VOLUME /usr/share/logstash/output/
+VOLUME ["/usr/share/logstash/logfiles/", "/usr/share/logstash/output/"]
