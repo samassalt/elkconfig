@@ -1,8 +1,8 @@
+# Delete the frc971 Index. Removes old data.
 DELETE frc971
 
-PUT frc971_test
-
-curl -XPUT "http://localhost:9200/frc971" -H 'Content-Type: application/json' -d'
+#Create Index for frc971 data.
+PUT /frc971
 {
   "mappings": {
     "frclog": {
@@ -390,9 +390,10 @@ curl -XPUT "http://localhost:9200/frc971" -H 'Content-Type: application/json' -d
       }
     }
   }
-}'
+}
 
-curl -XPUT "http://localhost:9200/_template/frc971" -H 'Content-Type: application/json' -d'
+#Create a template for frc971 data. Usefull when making more indexes starting with frc
+PUT /_template/frc971
 {
   "template": "frc*",
   "settings": {
@@ -784,4 +785,4 @@ curl -XPUT "http://localhost:9200/_template/frc971" -H 'Content-Type: applicatio
       }
     }
   }
-}'
+}
