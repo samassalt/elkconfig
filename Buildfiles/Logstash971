@@ -1,0 +1,15 @@
+# Build a Logstash image for FRC971 with base image from Elastic.co
+
+FROM docker.elastic.co/logstash/logstash:5.5.0
+
+LABEL version="1.0" \
+      maintainer="Stephan Massalt"
+
+RUN curl https://raw.githubusercontent.com/samassalt/elkconfig/master/init/logstash.yml > /usr/share/logstash/config/logstash.yml && \
+curl https://raw.githubusercontent.com/samassalt/elkconfig/master/init/log4j2.properties > /usr/share/logstash/config/log4j2.properties && \
+curl https://raw.githubusercontent.com/samassalt/elkconfig/master/configs/logstash.conf > /usr/share/logstash/pipeline/logstash.conf
+
+EXPOSE 5000:5000
+
+VOLUME /usr/share/logstash/logfiles/
+VOLUME /usr/share/logstash/output/

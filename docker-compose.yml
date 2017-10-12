@@ -2,28 +2,21 @@ version: '3.0'
 
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.5.0
+    image: samassalt/elasticsearch971:1.0
     container_name: elasticsearch
     volumes:
-      - ./init/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./data/:/usr/share/elasticsearch/data/
+      - ./971data:/usr/share/elasticsearch/data/
     ports:
       - 9200:9200
     networks:
       - elastic-stack
 
   logstash:
-    image: docker.elastic.co/logstash/logstash:5.5.0
+    image: samassalt/logstash971:1.0
     container_name: logstash
     volumes:
-      - ./init/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - ./init/log4j2.properties:/usr/share/logstash/config/log4j2.properties
-      - ./configs/:/usr/share/logstash/pipeline/
-      - ./logfiles/:/usr/share/logstash/logfiles/
-      - ./output/:/usr/share/logstash/output/
-#      - ./data/logs/:/usr/share/logstash/logs/
-#    environment:
-#      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      - ./971data:/usr/share/logstash/logfiles/
+      - ./971data:/usr/share/logstash/output/
     ports:
       - 5000:5000
     networks:
@@ -32,16 +25,19 @@ services:
       - elasticsearch
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:5.5.0
+    image: samassalt/kibana971:1.0
     container_name: kibana
-    volumes:
-      - ./init/kibana.yml:/usr/share/kibana/config/kibana.yml
     ports:
       - 5601:5601
     networks:
       - elastic-stack
     depends_on:
       - elasticsearch
+
+# volumes:
+#  971-data:
+#    external:
+#      name: 971data
 
 networks:
   elastic-stack:

@@ -1,0 +1,12 @@
+# Build a Kibana image for FRC971 with base image from Elastic.co
+
+FROM docker.elastic.co/kibana/kibana:5.5.0
+
+LABEL version="1.0" \
+      maintainer="Stephan Massalt"
+
+USER root
+RUN curl https://raw.githubusercontent.com/samassalt/elkconfig/master/init/kibana.yml > /usr/share/kibana/config/kibana.yml
+USER kibana
+
+EXPOSE 5601:5601
