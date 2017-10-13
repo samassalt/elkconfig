@@ -1,0 +1,388 @@
+{
+  "mappings": {
+    "frclog": {
+      "dynamic": false,
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "@version": {
+          "type": "text"
+        },
+        "component": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "err_message": {
+          "type": "text"
+        },
+        "estopped_val": {
+          "type": "text"
+        },
+        "hood": {
+          "properties": {
+            "angle": {
+              "type": "float"
+            },
+            "calculated_velocity": {
+              "type": "float"
+            },
+            "encoder": {
+              "type": "double"
+            },
+            "estimate": {
+              "properties": {
+                "error": {
+                  "type": "text"
+                },
+                "index_pulses_seen": {
+                  "type": "float"
+                },
+                "max_index_position": {
+                  "type": "float"
+                },
+                "min_index_position": {
+                  "type": "float"
+                },
+                "position": {
+                  "type": "float"
+                },
+                "zeroed": {
+                  "type": "text"
+                }
+              }
+            },
+            "estopped": {
+              "type": "text"
+            },
+            "feedforwards_power": {
+              "type": "float"
+            },
+            "goal_position": {
+              "type": "float"
+            },
+            "goal_velocity": {
+              "type": "float"
+            },
+            "index_pulses": {
+              "type": "float"
+            },
+            "latched_encoder": {
+              "type": "float"
+            },
+            "max_acceleration": {
+              "type": "float"
+            },
+            "max_velocity": {
+              "type": "float"
+            },
+            "position": {
+              "type": "float"
+            },
+            "position_power": {
+              "type": "float"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "theta_shooter": {
+              "type": "double"
+            },
+            "unprofiled_goal_position": {
+              "type": "float"
+            },
+            "unprofiled_goal_velocity": {
+              "type": "float"
+            },
+            "velocity": {
+              "type": "float"
+            },
+            "velocity_power": {
+              "type": "float"
+            },
+            "voltage_error": {
+              "type": "float"
+            },
+            "zeroed": {
+              "type": "text"
+            }
+          }
+        },
+        "indexer": {
+          "properties": {
+            "angular_velocity": {
+              "type": "float"
+            },
+            "avg_angular_velocity": {
+              "type": "float"
+            },
+            "fixed_instantaneous_velocity": {
+              "type": "float"
+            },
+            "instantaneous_velocity": {
+              "type": "float"
+            },
+            "position_error": {
+              "type": "float"
+            },
+            "ready": {
+              "type": "text"
+            },
+            "voltage_error": {
+              "type": "float"
+            },
+            "voltage_rollers": {
+              "type": "float"
+            }
+          }
+        },
+        "intake": {
+          "properties": {
+            "absolute_encoder": {
+              "type": "float"
+            },
+            "calculated_velocity": {
+              "type": "float"
+            },
+            "distance": {
+              "type": "float"
+            },
+            "encoder": {
+              "type": "double"
+            },
+            "estimate": {
+              "properties": {
+                "absolute_position": {
+                  "type": "float"
+                },
+                "error": {
+                  "type": "text"
+                },
+                "position": {
+                  "type": "float"
+                },
+                "pot_position": {
+                  "type": "float"
+                },
+                "zeroed": {
+                  "type": "text"
+                }
+              }
+            },
+            "estopped": {
+              "type": "text"
+            },
+            "feedforwards_power": {
+              "type": "float"
+            },
+            "goal_position": {
+              "type": "float"
+            },
+            "goal_velocity": {
+              "type": "float"
+            },
+            "max_acceleration": {
+              "type": "float"
+            },
+            "max_velocity": {
+              "type": "float"
+            },
+            "position": {
+              "type": "float"
+            },
+            "position_power": {
+              "type": "float"
+            },
+            "pot": {
+              "type": "float"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "theta_indexer": {
+              "type": "double"
+            },
+            "unprofiled_goal_position": {
+              "type": "float"
+            },
+            "unprofiled_goal_velocity": {
+              "type": "float"
+            },
+            "velocity": {
+              "type": "float"
+            },
+            "velocity_power": {
+              "type": "float"
+            },
+            "voltage_error": {
+              "type": "float"
+            },
+            "voltage_rollers": {
+              "type": "float"
+            },
+            "zeroed": {
+              "type": "text"
+            }
+          }
+        },
+        "line": {
+          "type": "long"
+        },
+        "log_level": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "log_type": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "millisec": {
+          "type": "date",
+          "format": "mmss.SSSSSSZ"
+        },
+        "path": {
+          "type": "text"
+        },
+        "series": {
+          "type": "long"
+        },
+        "shooter": {
+          "properties": {
+            "angular_velocity": {
+              "type": "float"
+            }
+          }
+        },
+        "turret": {
+          "properties": {
+            "absolute_encoder": {
+              "type": "text"
+            },
+            "angle": {
+              "type": "float"
+            },
+            "calculated_velocity": {
+              "type": "float"
+            },
+            "encoder": {
+              "type": "float"
+            },
+            "estimate": {
+              "properties": {
+                "absolute_position": {
+                  "type": "float"
+                },
+                "error": {
+                  "type": "text"
+                },
+                "position": {
+                  "type": "float"
+                },
+                "pot_position": {
+                  "type": "float"
+                },
+                "zeroed": {
+                  "type": "text"
+                }
+              }
+            },
+            "estopped": {
+              "type": "text"
+            },
+            "feedforwards_power": {
+              "type": "float"
+            },
+            "goal_position": {
+              "type": "float"
+            },
+            "goal_velocity": {
+              "type": "float"
+            },
+            "max_acceleration": {
+              "type": "float"
+            },
+            "max_velocity": {
+              "type": "float"
+            },
+            "position": {
+              "type": "float"
+            },
+            "position_power": {
+              "type": "float"
+            },
+            "pot": {
+              "type": "float"
+            },
+            "state": {
+              "type": "integer"
+            },
+            "unprofiled_goal_position": {
+              "type": "float"
+            },
+            "unprofiled_goal_velocity": {
+              "type": "float"
+            },
+            "velocity": {
+              "type": "float"
+            },
+            "velocity_power": {
+              "type": "float"
+            },
+            "voltage_error": {
+              "type": "float"
+            },
+            "zeroed": {
+              "type": "text"
+            }
+          }
+        },
+        "type": {
+          "type": "text"
+        },
+        "voltage": {
+          "properties": {
+            "voltage_hood": {
+              "type": "float"
+            },
+            "voltage_indexer": {
+              "type": "float"
+            },
+            "voltage_indexer_rollers": {
+              "type": "float"
+            },
+            "voltage_intake": {
+              "type": "float"
+            },
+            "voltage_intake_rollers": {
+              "type": "float"
+            },
+            "voltage_shooter": {
+              "type": "float"
+            },
+            "voltage_turret": {
+              "type": "float"
+            }
+          }
+        },
+        "zeroed_val": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
