@@ -252,8 +252,7 @@
           }
         },
         "millisec": {
-          "type": "date",
-          "format": "mmss.SSSSSSZ"
+          "type": "float"
         },
         "path": {
           "type": "text"
